@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       // A widget which will be started on application startup
-      home: MyHomePage(title: 'FINALISTA ADS 2023.1'),
+      home: MyHomePage(title: 'MELHORES JOGADORES'),
     );
   }
 }
@@ -27,19 +27,23 @@ class MyHomePage extends StatelessWidget {
 
   Widget buildAlunoCard(Aluno aluno) {
     return Card(
-        child: Column(children: <Widget>[
-      Image.network(aluno.urlImage),
-      Text(aluno.aluno,
-          style: TextStyle(
-              color: Colors.grey[800],
-              fontWeight: FontWeight.bold,
-              fontSize: 40)),
-      Text(aluno.descrition,
-          style: TextStyle(
-              color: Colors.grey[800],
-              fontStyle: FontStyle.italic,
-              fontSize: 20))
-    ]));
+        elevation: 2.0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(children: <Widget>[
+              Image.network(aluno.urlImage),
+              Text(aluno.aluno,
+                  style: TextStyle(
+                      color: Colors.grey[800],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40)),
+              Text(aluno.descrition,
+                  style: TextStyle(
+                      color: Colors.grey[800],
+                      fontStyle: FontStyle.italic,
+                      fontSize: 20))
+            ])));
   }
 
   @override
